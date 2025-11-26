@@ -1,0 +1,120 @@
+$reaction_field
+   econv=  1.0000E-06
+   qmaxconv=  1.0000E-05
+   qrmsconv=  1.0000E-06
+$cosmo_atoms
+# radii in Angstrom units
+u  1                                                                           \
+   radius=  2.2230
+o  2,12,22,32,42,52,62,72                                                      \
+   radius=  1.7200
+s  3,13,23,33,43,53,63,73                                                      \
+   radius=  2.1600
+c  4,8,14,18,24,28,34,38,44,48,54,58,64,68,74,78                               \
+   radius=  2.0000
+h  5-7,9-11,15-17,19-21,25-27,29-31,35-37,39-41,45-47,49-51,55-57,59-61,65-67, \
+   69-71,75-77,79-81                                                           \
+   radius=  1.3000
+$cosmo_out file=U_IV_DMSO_8.cosmo
+$cosmo_data file=cosmo_transfer.tmp
+$title
+$symmetry c1
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   off
+ redundant  off
+ cartesian  on
+ global     off
+ basis      off
+$atoms
+u  1                                                                           \
+   basis =u def-TZVP                                                           \
+   ecp   =u def-ecp                                                            \
+   cbas  =u def-TZVP                                                           \
+   jbas  =u def-TZVP
+o  2,12,22,32,42,52,62,72                                                      \
+   basis =o def-TZVP                                                           \
+   jbas  =o def-TZVP
+s  3,13,23,33,43,53,63,73                                                      \
+   basis =s def-TZVP                                                           \
+   jbas  =s def-TZVP
+c  4,8,14,18,24,28,34,38,44,48,54,58,64,68,74,78                               \
+   basis =c def-TZVP                                                           \
+   jbas  =c def-TZVP
+h  5-7,9-11,15-17,19-21,25-27,29-31,35-37,39-41,45-47,49-51,55-57,59-61,65-67, \
+   69-71,75-77,79-81                                                           \
+   basis =h def-TZVP                                                           \
+   jbas  =h def-TZVP
+$basis    file=basis
+$ecp    file=basis
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit      300
+$thize     0.10000000E-04
+$thime        5
+$scfdamp   start=1.000  step=0.050  min=0.100
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor   4000 MiB  per_core
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$denconv     0.10000000E-06
+$freeze
+ implicit core=   73 virt=    0
+$cbas    file=auxbasis
+$ricc2
+    mp2
+$rundimensions
+   natoms=81
+   nbf(CAO)=1074
+   nbf(AO)=1019
+$alpha shells
+ a       1-183                                  ( 1 )
+$beta shells
+ a       1-181                                  ( 1 )
+$energy    file=energy
+$grad    file=gradient
+$ricore     4000
+$rij
+$jbas    file=auxbasis
+$dft
+    functional   b-p
+    gridsize   m4
+$scfconv   7
+$scforbitalshift  closedshell=.05
+$last step     ridft
+$xctype GGA (not to be modified here)
+$ssquare from ridft
+          2.006 (not to be modified here)
+$charge from ridft
+          4.000 (not to be modified here)
+$dipole from ridft
+  x     0.00392353875528    y    -0.00160024106851    z    -0.01276330866227    a.u.
+   | dipole | =    0.0341824466  debye
+$last SCF energy change = 0.72635697
+$orbital_max_rnorm 0.56451520139364E-04
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-4902.727157945    -22656.55210004     10199.85665389    -393.4286945977    -14.83446607109     7962.231448866
+$end

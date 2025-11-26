@@ -1,0 +1,2078 @@
+
+  ========================================================================
+                license information 
+ Customer : 200000000019588
+ ID       : LKO3533017
+
+ License file is VALID, continuing with full version
+  ========================================================================
+
+   OpenMP run-time library returned nthreads = 16
+
+ ridft (u-0-13.local) : TURBOMOLE rev. V7-9 compiled 8 Oct 2024 at 18:07:07
+ Copyright (C) 2024 TURBOMOLE GmbH, Karlsruhe
+
+
+    2025-11-15 18:40:38.400 
+
+
+
+                                  r i d f t
+
+                        DFT program with RI approximation 
+                                for coulomb part 
+
+
+
+
+
+                                 References:     
+                                                 
+          TURBOMOLE:                             
+              R. Ahlrichs, M. Baer, M. Haeser, H. Horn, and
+              C. Koelmel
+              Electronic structure calculations on workstation
+              computers: the program system TURBOMOLE
+              Chem. Phys. Lett. 162: 165 (1989)
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. Chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v. Arnim and R. Ahlrichs                      
+              J. Comp. Chem. 19: 1746 (1998)                   
+          RI-J Method:                                     
+              Auxiliary Basis Sets to approximate Coulomb      
+              Potentials                                       
+              Chem. Phys. Lett. 240: 283 (1995)                
+              K. Eichkorn, O. Treutler, H. Oehm, M. Haeser     
+              and R. Ahlrichs                                  
+              Chem. Phys. Lett. 242: 652 (1995)                
+                                                           
+              Auxiliary Basis Sets for Main Row Atoms and their
+              Use to approximate Coulomb Potentials            
+              K. Eichkorn, F. Weigend, O. Treutler and         
+              R. Ahlrichs                                      
+              Theo. Chem. Acc. 97: 119 (1997)                  
+                                                           
+              Accurate Coulomb-fitting basis sets for H to Rn 
+              F. Weigend                                       
+              Phys. Chem. Chem. Phys. 8: 1057 (2006)           
+                                                           
+          Multipole accelerated RI-J (MARI-J):             
+              Fast evaluation of the Coulomb potential for     
+              electron densities using multipole accelerated   
+              resolution of identity approximation             
+              M. Sierka, A. Hogekamp and R. Ahlrichs           
+              J. Chem. Phys. 118: 9136 (2003)                  
+          RI-JK Method:                                     
+              A fully direct RI-HF algorithm: Implementation,
+              optimised auxiliary basis sets, demonstration of
+              accuracy and efficiency                         
+              F. Weigend                                      
+              Phys. Chem. Chem. Phys. 4: 4285 (2002)           
+          Two-component HF and DFT with spin-orbit coupling:  
+              Self-consistent treatment of spin-orbit         
+              interactions with efficient Hartree-Fock and    
+              density functional methods                      
+              M. K. Armbruster, F. Weigend, C. van Wüllen and 
+              W. Klopper                                      
+              Phys. Chem. Chem. Phys. 10: 1748 (2008)         
+          Two-component difference density and DIIS algorithm 
+              Efficient two-component self-consistent field   
+              procedures and gradients: implementation in     
+              TURBOMOLE and application to Au20-              
+              A. Baldes, F. Weigend                           
+              Mol. Phys. 111: 2617 (2013)                     
+          Relativistic current density functional theory      
+              Current density functional framework for        
+              spin-orbit coupling                             
+              C. Holzer, Y. J. Franzke, A. Pausch             
+              J. Chem. Phys. 157: 204102 (2022)               
+          Relativistic all-electron 2c calculations           
+              An efficient implementation of two-component    
+              relativistic exact-decoupling methods for large 
+              molecules                                       
+              D. Peng, N. Middendorf, F. Weigend, M. Reiher   
+              J. Chem. Phys. 138: 184105 (2013)               
+          Finite nucleus model and SNSO approximation         
+              Efficient implementation of one- and two-       
+              component analytical energy gradients in exact  
+              two-component theory                            
+              Y. J. Franzke, N. Middendorf, F. Weigend        
+              J. Chem. Phys. 148: 104110 (2018)               
+          Grids for all-electron relativistic methods         
+              Error-consistent segmented contracted all-      
+              electron relativistic basis sets of double-     
+              and triple-zeta quality for NMR shielding       
+              constants                                       
+              Y. J. Franzke, R. Tress, T. M. Pazdera,         
+              F. Weigend                                      
+              Phys. Chem. Chem. Phys. 21: 166658 (2019)       
+          Seminumerical exchange algorithms                   
+              Seminumerical calculation of the Hartree-Fock   
+              exchange matirx: Application to two-component   
+              procedures and efficient evaluation of local    
+              hybrid functionsl                               
+              P. Plessow, F. Weigend,                         
+              J. Comput. Chem. 33: 810 (2012)                 
+          Improved seminumerical algorithms                   
+              C. Holzer,                                      
+              J. Chem. Phys. 153 (2020), 184115               
+
+
+
+
+
+
+          OpenMP Shared-Memory Parallelization: 16 CPUs.
+
+            By: Christof Holzer and Yannick J. Franzke
+
+
+              +--------------------------------------------------+
+              |      general information about current run       |
+              +--------------------------------------------------+
+
+ 
+
+ DENSITY CONVERGENCE CHECK SWITCHED ON !
+ SCF CONVERGENCE IF RMS(delta[D]) <     0.1000000000E-06
+
+ A HF calculation using the RI-JK approximation will be carried out.
+ Allocatable memory for RI due to $ricore (MB):                  4000
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.00000000    0.00000000    0.01624598    u     92.000     0
+         -2.81880808   -0.37852537   -3.37792891    o      8.000     0
+         -2.98993979    0.90272595   -5.97689004    s     16.000     0
+         -5.68457775    2.88539825   -5.79017565    c      6.000     0
+         -5.97519873    3.68870193   -7.66724439    h      1.000     0
+         -5.23918253    4.37265051   -4.44145733    h      1.000     0
+         -7.31465173    1.77965336   -5.18986068    h      1.000     0
+         -4.18489866   -1.51709292   -7.96115727    c      6.000     0
+         -2.71280201   -2.94760048   -8.12076165    h      1.000     0
+         -4.56496227   -0.67713233   -9.80532966    h      1.000     0
+         -5.89886892   -2.29093955   -7.11979073    h      1.000     0
+         -0.94417142    4.09704718   -1.43558903    o      8.000     0
+         -0.54487796    6.75501312   -0.34910234    s     16.000     0
+         -3.60650829    7.82143848    0.49797874    c      6.000     0
+         -4.22980422    6.65141455    2.07049922    h      1.000     0
+         -4.86868661    7.65302042   -1.12060192    h      1.000     0
+         -3.42103734    9.78516250    1.10020422    h      1.000     0
+          0.00000000    8.63603516   -3.06626394    c      6.000     0
+         -1.53238269    8.33505470   -4.41029952    h      1.000     0
+          1.81223413    8.04880277   -3.84790191    h      1.000     0
+          0.08969774   10.60328919   -2.45561784    h      1.000     0
+          1.74969553   -2.23540239    3.40084373    o      8.000     0
+          2.76460696   -1.49263042    6.01731695    s     16.000     0
+          6.07799983   -1.94735899    5.81826832    c      6.000     0
+          6.84549698   -1.64384630    7.70839317    h      1.000     0
+          6.79801761   -0.52242990    4.52222044    h      1.000     0
+          6.47452296   -3.85359376    5.14725869    h      1.000     0
+          1.92436291   -4.10689076    7.93516220    c      6.000     0
+          2.61094955   -5.83561978    7.04924347    h      1.000     0
+         -0.12908908   -4.10279195    8.08691287    h      1.000     0
+          2.77689585   -3.82233580    9.79055956    h      1.000     0
+          3.54483897    2.28340332    1.44640204    o      8.000     0
+          5.16330058    4.39540281    0.29514310    s     16.000     0
+          6.10022301    6.20119486    2.95724375    c      6.000     0
+          7.44563998    7.62141853    2.30661483    h      1.000     0
+          6.94875918    4.94656411    4.35409151    h      1.000     0
+          4.40638023    7.11012478    3.69465646    h      1.000     0
+          8.08389309    2.94314828   -0.47596343    c      6.000     0
+          8.84944004    2.00201932    1.18792153    h      1.000     0
+          9.34624904    4.43384173   -1.13712758    h      1.000     0
+          7.70396743    1.60857267   -1.99371019    h      1.000     0
+          2.81880808    0.37852537   -3.37792891    o      8.000     0
+          2.98993979   -0.90272595   -5.97689004    s     16.000     0
+          5.68457775   -2.88539825   -5.79017565    c      6.000     0
+          5.97519873   -3.68870193   -7.66724439    h      1.000     0
+          5.23918253   -4.37265051   -4.44145733    h      1.000     0
+          7.31465173   -1.77965336   -5.18986068    h      1.000     0
+          4.18489866    1.51709292   -7.96115727    c      6.000     0
+          2.71280201    2.94760048   -8.12076165    h      1.000     0
+          4.56496227    0.67713233   -9.80532966    h      1.000     0
+          5.89886892    2.29093955   -7.11979073    h      1.000     0
+          0.94417142   -4.09704718   -1.43558903    o      8.000     0
+          0.54487796   -6.75501312   -0.34910234    s     16.000     0
+          3.60650829   -7.82143848    0.49797874    c      6.000     0
+          4.22980422   -6.65141455    2.07049922    h      1.000     0
+          4.86868661   -7.65302042   -1.12060192    h      1.000     0
+          3.42103734   -9.78516250    1.10020422    h      1.000     0
+          0.00000000   -8.63603516   -3.06626394    c      6.000     0
+          1.53238269   -8.33505470   -4.41029952    h      1.000     0
+         -1.81223413   -8.04880277   -3.84790191    h      1.000     0
+         -0.08969774  -10.60328919   -2.45561784    h      1.000     0
+         -1.74969553    2.23540239    3.40084373    o      8.000     0
+         -2.76460696    1.49263042    6.01731695    s     16.000     0
+         -6.07799983    1.94735899    5.81826832    c      6.000     0
+         -6.84549698    1.64384630    7.70839317    h      1.000     0
+         -6.79801761    0.52242990    4.52222044    h      1.000     0
+         -6.47452296    3.85359376    5.14725869    h      1.000     0
+         -1.92436291    4.10689076    7.93516220    c      6.000     0
+         -2.61094955    5.83561978    7.04924347    h      1.000     0
+          0.12908908    4.10279195    8.08691287    h      1.000     0
+         -2.77689585    3.82233580    9.79055956    h      1.000     0
+         -3.54483897   -2.28340332    1.44640204    o      8.000     0
+         -5.16330058   -4.39540281    0.29514310    s     16.000     0
+         -6.10022301   -6.20119486    2.95724375    c      6.000     0
+         -7.44563998   -7.62141853    2.30661483    h      1.000     0
+         -6.94875918   -4.94656411    4.35409151    h      1.000     0
+         -4.40638023   -7.11012478    3.69465646    h      1.000     0
+         -8.08389309   -2.94314828   -0.47596343    c      6.000     0
+         -8.84944004   -2.00201932    1.18792153    h      1.000     0
+         -9.34624904   -4.43384173   -1.13712758    h      1.000     0
+         -7.70396743   -1.60857267   -1.99371019    h      1.000     0
+ 
+       center of nuclear mass  :    0.00000000    0.00000000    0.00168221
+       center of nuclear charge:    0.00000000    0.00000000    0.00000023
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    u        1    213    117   SVP(6g)   [10s9p5d4f3g|14s13p10d8f6g]
+    o        8     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+    s        8     63     37   def2-TZVP   [5s5p2d1f|14s9p3d1f]
+    c       16     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+    h       48      8      6   def2-TZVP   [3s1p|5s1p]
+   ---------------------------------------------------------------------------
+   total:   81   2205   1445
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  124
+   total number of contracted shells         :  591
+   total number of cartesian basis functions : 1640
+   total number of SCF-basis functions       : 1445
+
+  number of unique ecp types :    1
+
+ integral neglect threshold       :  0.20E-11
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ RI-JK AUXILIARY BASIS SET information:
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    u        1    473    438   def-TZVP   [15s13p14d13f9g7h5i|20s15p14d13f9g8h6i]
+    o        8     97     77   def2-TZVP   [10s8p4d2f1g|14s10p6d2f1g]
+    s        8    139    128   def2-TZVP   [13s11p9d4f1g|16s12p10d4f1g]
+    c       16     97     75   def2-TZVP   [10s8p5d1f1g|14s10p6d2f1g]
+    h       48     20     18   def2-TZVP   [2s2p2d|4s2p2d]
+   ---------------------------------------------------------------------------
+   total:   81   4873   4142
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  202
+   total number of contracted shells         : 1268
+   total number of cartesian basis functions : 5058
+   total number of SCF-basis functions       : 4142
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+ ==============================================================================
+                      COSMO switched on
+ ==============================================================================
+ COSMO stati: segments per atom: H   32 other atoms   92
+ COSMO statistics: nps   1871 npspher:    726
+ COSMO surface:
+   number of segments: 1871
+   area (bohr**2):     1719.253527
+   volume (bohr**3):   5277.628985
+ COSMO: check number of disjunct cavities:
+
+       ... OK contiguous cavity found
+
+ biggest AO integral is expected to be    25.028879086
+
+          ------------------------
+          nuclear repulsion energy  :   7962.23144887    
+          ------------------------
+
+
+         -----------------
+         -S,T+V- integrals
+         -----------------
+
+ 1e-integrals will be neglected if expon. factor < 0.203778E-12
+
+
+          ----------------
+          -ecp-  integrals
+          ----------------
+ 
+ Difference densities algorithm switched on.
+ The maximal number of linear combinations of
+ difference densities is  20.
+
+ DIIS switched on: error vector is FDS-SDF
+ Max. Iterations for DIIS is     :   5
+ DIIS matrix (see manual) 
+    Scaling factor of diagonals  :  1.200
+    threshold for scaling factor :  0.000
+
+ scf convergence criterion : increment of total energy < .1000000D-06
+                  and increment of one-electron energy < .1000000D-03
+
+ MOs are in ASCII format !
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a     1445      183
+ 
+ number of basis functions   :  1445
+ number of occupied orbitals :   183
+ 
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=7
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=7
+ mo-orthogonalization by Cholesky decomposition
+ mo-orthogonalization by Cholesky decomposition
+
+ UHF mode switched on !
+
+ automatic virtual orbital shift switched on 
+      shift if e(lumo)-e(homo) < 0.10000000    
+
+  
+           ------------------------
+               RI-JK - INFORMATION
+           ------------------------
+ Contributions to RI integral batches: 
+  neglected integral batches:                 83615
+  direct contribution:                        91321
+  memory contribution:                     0
+ Memory core needed for (P|Q) and Cholesky    131 MByte
+ Memory core minimum needed except of (P|Q)     3 MByte
+ Total minimum memory core needed (sum)       134 MByte
+  
+ ****************************************
+ Memory allocated for RI-J   134 MByte
+ ****************************************
+                                            
+ total memory allocated for calculation of  (Q|P)**(-1/2) :  197 MiB
+
+  forming (P|Q)**(-1/2) 
+ eigenvalues of original matrix 
+ smallest =0.6226280101701E-09  largest = 74.51325675988    
+  The symmetry information takes                      1  MB
+
+ DSCF restart information will be dumped onto file alpha
+
+
+ Starting SCF iterations
+
+ 
+ BLOCKING OF ALPHA-MOS FOR RI-K
+ 
+ 
+ occupied MOs partitioned into blocks of maximum length 76
+ this requires 3946 MiB core memory.
+ 
+            MULTIPLE PASS Statistics 
+ ----------------------------------------------------
+  pass       irrep     lambda      batch : MO  to  MO
+ ----------------------------------------------------
+   1       1  ->  1    1  -> 76             1  ->  76
+   2       1  ->  1   77  ->152            77  -> 152
+   3       1  ->  1  153  ->183           153  -> 183
+
+
+ 
+ BLOCKING OF BETA-MOS FOR RI-K
+ 
+ 
+ occupied MOs partitioned into blocks of maximum length 76
+ this requires 3946 MiB core memory.
+ 
+            MULTIPLE PASS Statistics 
+ ----------------------------------------------------
+  pass       irrep     lambda      batch : MO  to  MO
+ ----------------------------------------------------
+   1       1  ->  1    1  -> 76             1  ->  76
+   2       1  ->  1   77  ->152            77  -> 152
+   3       1  ->  1  153  ->181           153  -> 181
+
+
+
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     RMS[dD(SAO)]   TOL
+   1  -4888.4311806918    -22650.738217     9800.0755878    0.000D+00 0.203D-11
+                           RI-K = -393.723335492     Coul =  10193.7989233    
+                          Ediel =-0.714586803399    
+                            current damping = 1.000
+ 
+          max. resid. norm for Fia-block=  7.406D-05 for orbital    174a    alpha
+          max. resid. fock norm         =  7.428D-05 for orbital    174a    alpha
+
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     RMS[dD(SAO)]   TOL
+   2  -4888.4311807201    -22650.738217     9800.0755878    0.487D-07 0.129D-11
+                           RI-K = -393.723335446     Coul =  10193.7989232    
+                          Ediel =-0.714586805089    
+                            current damping = 1.000
+ 
+          Norm of current diis error: 0.27187E-03
+          max. resid. norm for Fia-block=  7.420D-05 for orbital    174a    alpha
+          max. resid. fock norm         =  7.442D-05 for orbital    174a    alpha
+
+ ENERGY & DENSITY CONVERGED !
+
+
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     RMS[dD(SAO)]   TOL
+   3  -4888.4311807430    -22650.738218     9800.0755880    0.488D-07 0.855D-12
+                           RI-K = -393.723335416     Coul =  10193.7989234    
+                          Ediel =-0.714586806311    
+                            current damping = 1.050
+ 
+          Norm of current diis error: 0.27145E-03
+          max. resid. norm for Fia-block=  7.517D-05 for orbital    174a    alpha
+          max. resid. fock norm         =  7.539D-05 for orbital    174a    alpha
+
+ End of SCF iterations
+
+   convergence criteria satisfied after     3 iterations
+
+
+                  ------------------------------------------ 
+                 |  total energy      =  -4888.43118074305  |
+                  ------------------------------------------ 
+                 :  kinetic energy    =   4561.66927731859  :
+                 :  potential energy  =  -9450.10045806163  :
+                 :  virial theorem    =      1.93315607987  :
+                 :  wavefunction norm =      1.00000000000  :
+                  .......................................... 
+
+
+ orbitals $uhfmo_beta  will be written to file beta
+
+ orbitals $uhfmo_alpha  will be written to file alpha
+ 
+ alpha: 
+
+    irrep                179a        180a        181a        182a        183a   
+ eigenvalues H         -0.43533    -0.42350    -0.42182    -0.42103    -0.42022
+            eV         -11.8461    -11.5241    -11.4783    -11.4569    -11.4350
+ occupation              1.0000      1.0000      1.0000      1.0000      1.0000
+
+    irrep                184a        185a        186a        187a        188a   
+ eigenvalues H          0.09364     0.11038     0.11051     0.11585     0.11592
+            eV           2.5481      3.0037      3.0071      3.1523      3.1545
+ 
+ beta:  
+
+    irrep                177a        178a        179a        180a        181a   
+ eigenvalues H         -0.43524    -0.42358    -0.42218    -0.42112    -0.42058
+            eV         -11.8436    -11.5263    -11.4883    -11.4593    -11.4446
+ occupation              1.0000      1.0000      1.0000      1.0000      1.0000
+
+    irrep                182a        183a        184a        185a        186a   
+ eigenvalues H          0.09395     0.11120     0.11129     0.11585     0.11967
+            eV           2.5565      3.0259      3.0282      3.1524      3.2563
+ 
+ ==============================================================================
+                                  COSMO RESULTS
+ ==============================================================================
+  PARAMETER:
+    nppa:      1082
+    nspa:        92
+    nsph:        32
+    nps:       1871
+    npspher:    726
+    disex:   10.0000    
+    disex2:  4067.10    
+    rsolv [A]: 1.3000
+    routf:     0.8500
+    phsran:    0.0    
+    ampran:   0.10E-04
+    cavity:  closed
+    solvent: user input
+    source:  user input
+    epsilon:    80.100 ( 25.0 C)
+    refind:      1.300 ( 25.0 C)
+    fepsi:       0.9813896
+  CAVITY VOLUME/AREA [a.u.]:
+    surface: V1.0, A matrix: V1.0
+    area:  1719.25
+    volume:  5277.63
+  SCREENING CHARGE:
+    cosmo      :  -4.029770
+    correction :   0.032544
+    total      :  -3.997226
+  ENERGIES [a.u.]:
+    Total energy            =     -4888.4311807430477
+    Total energy + OC corr. =     -4888.4202203498
+    Dielectric energy       =        -0.7145868063
+    Diel. energy + OC corr. =        -0.7036264131
+  ELEMENT RADIUS [A]: ATOM LIST
+    u  2.22: 1
+    o  1.72: 2,12,22,32,42,52,62,72
+    s  2.16: 3,13,23,33,43,53,63,73
+    c  2.00: 4,8,14,18,24,28,34,38,44,48,54,58,64,68,74,78
+    h  1.30: 5-7,9-11,15-17,19-21,25-27,29-31,35-37,39-41,45-47,49-51,55-57,
+             59-61,65-67,69-71,75-77,79-81
+ ==============================================================================
+
+                                             _ _ _ 
+  IRREP     alpha occ.     beta occ.      tr(D*D-D)
+
+
+ a        183.00000000   181.00000000    -0.50285894
+
+   -------------------------------------------------
+
+   sum    183.00000000   181.00000000    -0.50285894
+
+ <S*S>     2.00571788
+
+ 
+ 
+ 
+ ==============================================================================
+                           electrostatic moments
+ ==============================================================================
+
+ reference point for electrostatic moments:    0.00000   0.00000   0.00000
+
+ 
+              nuc           elec       ->  total
+ ------------------------------------------------------------------------------
+                          charge      
+ ------------------------------------------------------------------------------
+         368.000000    -364.000000       4.000000
+ a-b                                     2.000000
+ 
+ ------------------------------------------------------------------------------
+                       dipole moment  
+ ------------------------------------------------------------------------------
+   x      -0.000000      -0.000056      -0.000056
+   y      -0.000000      -0.000226      -0.000226
+   z      -0.974660       0.944618      -0.030042
+ 
+   | dipole moment | =     0.0300 a.u. =     0.0764 debye 
+ 
+ ------------------------------------------------------------------------------
+                     quadrupole moment
+ ------------------------------------------------------------------------------
+  xx    5729.761862   -5817.388847     -87.626985
+  yy    6656.351057   -6733.072473     -76.721416
+  zz    6745.104385   -6820.559862     -75.455477
+  xy     454.482245    -449.568248       4.913997
+  xz       0.000000      -0.000657      -0.000657
+  yz       0.000000       0.000644       0.000644
+ 
+     1/3  trace=     -79.934626
+     anisotropy=      14.379914
+
+ CONSTRUCTING NATURAL ORBITALS ...
+
+    irrep  a   
+      tr[ S**1/2 D S**1/2 ] :  364.000000000105
+        occupation of NO's  :    2.000000000012
+                                 2.000000000011
+                                 2.000000000007
+                                 2.000000000007
+                                 2.000000000005
+                                 2.000000000005
+                                 2.000000000004
+                                 2.000000000004
+                                 2.000000000003
+                                 2.000000000003
+                                 2.000000000003
+                                 2.000000000002
+                                 2.000000000002
+                                 2.000000000002
+                                 2.000000000002
+                                 2.000000000002
+                                 2.000000000002
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000001
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 2.000000000000
+                                 1.999999999999
+                                 1.999999999999
+                                 1.999999999999
+                                 1.999999999999
+                                 1.999999999999
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999998
+                                 1.999999999997
+                                 1.999999999997
+                                 1.999999999997
+                                 1.999999999997
+                                 1.999999999997
+                                 1.999999999996
+                                 1.999999999995
+                                 1.999999999992
+                                 1.999999999990
+                                 1.999999999987
+                                 1.999999999984
+                                 1.999999999977
+                                 1.999999999977
+                                 1.999999999975
+                                 1.999999999973
+                                 1.999999999967
+                                 1.999999999966
+                                 1.999999999965
+                                 1.999999999962
+                                 1.999999999961
+                                 1.999999999959
+                                 1.999999999958
+                                 1.999999999958
+                                 1.999999999958
+                                 1.999999999955
+                                 1.999999999955
+                                 1.999999999955
+                                 1.999999999953
+                                 1.999999999952
+                                 1.999999999952
+                                 1.999999999951
+                                 1.999999999951
+                                 1.999999999949
+                                 1.999999999945
+                                 1.999999999945
+                                 1.999999999939
+                                 1.999999999928
+                                 1.999999999923
+                                 1.999999999920
+                                 1.999999999887
+                                 1.999999999882
+                                 1.999999999861
+                                 1.999999999857
+                                 1.999999999852
+                                 1.999999999842
+                                 1.999999999841
+                                 1.999999999840
+                                 1.999999999770
+                                 1.999999999733
+                                 1.999999999726
+                                 1.999999999684
+                                 1.999999999525
+                                 1.999999999520
+                                 1.999999999512
+                                 1.999999999373
+                                 1.999999999306
+                                 1.999999999303
+                                 1.999999999250
+                                 1.999999999242
+                                 1.999999999240
+                                 1.999999999186
+                                 1.999999999168
+                                 1.999999998800
+                                 1.999999997779
+                                 1.999999997745
+                                 1.999999997414
+                                 1.999999997288
+                                 1.999999997158
+                                 1.999999997069
+                                 1.999999996645
+                                 1.999999996125
+                                 1.999999995397
+                                 1.999999994389
+                                 1.999999993764
+                                 1.999999993249
+                                 1.999999987983
+                                 1.999999986336
+                                 1.999999983168
+                                 1.999999981489
+                                 1.999999976219
+                                 1.999999975876
+                                 1.999999975741
+                                 1.999999973969
+                                 1.999999969123
+                                 1.999999967861
+                                 1.999999966965
+                                 1.999999961316
+                                 1.999999933704
+                                 1.999999928261
+                                 1.999999917004
+                                 1.999999911728
+                                 1.999999901629
+                                 1.999999889062
+                                 1.999999888496
+                                 1.999999871879
+                                 1.999999861490
+                                 1.999999840904
+                                 1.999999833776
+                                 1.999999772548
+                                 1.999999706038
+                                 1.999999684975
+                                 1.999999527014
+                                 1.999999514160
+                                 1.999999473012
+                                 1.999999302131
+                                 1.999998948268
+                                 1.999998935130
+                                 1.999998491945
+                                 1.999998482618
+                                 1.999997782633
+                                 1.999997766582
+                                 1.999997053466
+                                 1.999995803984
+                                 1.999994830249
+                                 1.999994299628
+                                 1.999992365259
+                                 1.999981441412
+                                 1.999980469920
+                                 1.999976992644
+                                 1.999976557665
+                                 1.999974783395
+                                 1.999941338951
+                                 1.999941073210
+                                 1.999914361202
+                                 1.999892282734
+                                 1.999843803513
+                                 1.999810689515
+                                 1.999809656235
+                                 1.999787968720
+                                 1.999515496084
+                                 1.999511604272
+                                 1.999321822953
+                                 1.000000000001
+                                 1.000000000001
+                                 0.000678177093
+                                 0.000488395733
+                                 0.000484503932
+                                 0.000212031208
+                                 0.000190343773
+                                 0.000189310368
+                                 0.000156196365
+                                 0.000107717297
+                                 0.000085638822
+                                 0.000058926973
+                                 0.000058661039
+                                 0.000025216665
+                                 0.000023442435
+                                 0.000023007342
+                                 0.000019530056
+                                 0.000018558533
+                                 0.000007634649
+                                 0.000005700219
+                                 0.000005169805
+                                 0.000004196168
+                                 0.000002946543
+                                 0.000002233321
+                                 0.000002217287
+                                 0.000001517348
+                                 0.000001508009
+                                 0.000001065008
+                                 0.000001051894
+                                 0.000000697874
+                                 0.000000526968
+                                 0.000000485860
+                                 0.000000473027
+                                 0.000000314950
+                                 0.000000293972
+                                 0.000000227477
+                                 0.000000166246
+                                 0.000000159091
+                                 0.000000138529
+                                 0.000000128130
+                                 0.000000111505
+                                 0.000000110940
+                                 0.000000098394
+                                 0.000000088227
+                                 0.000000082958
+                                 0.000000071733
+                                 0.000000066295
+                                 0.000000038722
+                                 0.000000033038
+                                 0.000000032142
+                                 0.000000030871
+                                 0.000000026028
+                                 0.000000024258
+                                 0.000000024128
+                                 0.000000023791
+                                 0.000000018498
+                                 0.000000016846
+                                 0.000000013678
+                                 0.000000012033
+                                 0.000000006733
+                                 0.000000006223
+                                 0.000000005607
+                                 0.000000004633
+                                 0.000000003852
+                                 0.000000003339
+                                 0.000000002946
+                                 0.000000002827
+                                 0.000000002708
+                                 0.000000002571
+                                 0.000000002260
+                                 0.000000002237
+                                 0.000000001201
+                                 0.000000000848
+                                 0.000000000806
+                                 0.000000000769
+                                 0.000000000754
+                                 0.000000000736
+                                 0.000000000706
+                                 0.000000000696
+                                 0.000000000618
+                                 0.000000000485
+                                 0.000000000479
+                                 0.000000000469
+                                 0.000000000322
+                                 0.000000000273
+                                 0.000000000245
+                                 0.000000000235
+                                 0.000000000164
+                                 0.000000000160
+                                 0.000000000145
+                                 0.000000000142
+                                 0.000000000132
+                                 0.000000000130
+                                 0.000000000099
+                                 0.000000000099
+                                 0.000000000073
+                                 0.000000000064
+                                 0.000000000056
+                                 0.000000000054
+                                 0.000000000054
+                                 0.000000000052
+                                 0.000000000052
+                                 0.000000000049
+                                 0.000000000048
+                                 0.000000000047
+                                 0.000000000047
+                                 0.000000000046
+                                 0.000000000045
+                                 0.000000000045
+                                 0.000000000044
+                                 0.000000000044
+                                 0.000000000044
+                                 0.000000000043
+                                 0.000000000043
+                                 0.000000000039
+                                 0.000000000039
+                                 0.000000000035
+                                 0.000000000032
+                                 0.000000000031
+                                 0.000000000030
+                                 0.000000000030
+                                 0.000000000029
+                                 0.000000000029
+                                 0.000000000024
+                                 0.000000000023
+                                 0.000000000022
+                                 0.000000000021
+                                 0.000000000003
+                                 0.000000000003
+                                 0.000000000003
+                                 0.000000000003
+                                 0.000000000003
+                                 0.000000000003
+                                 0.000000000002
+                                 0.000000000002
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000001
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                 0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+                                -0.000000000000
+    Sum(occupation of NO's) :  364.000000000105
+ 
+ <S*S>   2.00571788094385     
+
+    irrep                179a        180a        181a        182a        183a   
+ occupation              1.9995      1.9995      1.9993      1.0000      1.0000
+
+    irrep                184a        185a        186a        187a        188a   
+ occupation              0.0007      0.0005      0.0005      0.0002      0.0002
+ 
+
+ orbitals $natural orbitals  will be written to file natural
+ 
+ ==============================================================================
+ 
+HOMO-LUMO Separation
+ HOMO         :   -0.42022432 H =    -11.43489 eV
+ LUMO         :    0.09363851 H =     +2.54803 eV
+ HOMO-LUMO gap:    0.51386283 H =    +13.98293 eV
+ 
+ ==============================================================================
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time : 11 hours 10 minutes and  9 seconds
+         total wall-time : 52 minutes and 36 seconds
+    ------------------------------------------------------------------------
+
+   ****  ridft : all done  ****
+
+
+    2025-11-15 19:33:14.571 
+
+ ridft ended normally
