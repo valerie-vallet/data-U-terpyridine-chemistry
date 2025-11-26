@@ -1,0 +1,120 @@
+$cosmo
+  epsilon=   80.100
+  rsolv= 1.30
+$reaction_field
+   econv=  1.0000E-06
+   qmaxconv=  1.0000E-05
+   qrmsconv=  1.0000E-06
+$cosmo_atoms
+# radii in Angstrom units
+u  1-2                                                                         \
+   radius=  2.2230
+o  3,8,65-68                                                                   \
+   radius=  1.7200
+h  4,7,9,15,17,20,22,24,28,31,33,36,41,44,46,48,50,52,54,56,58,60,62,64        \
+   radius=  1.3000
+n  5,10-12,18,26                                                               \
+   radius=  1.8300
+c  6,13-14,16,19,21,23,25,27,29-30,32,34-35,37-40,42-43,45,47,49,51,53,55,57,  \
+   59,61,63                                                                    \
+   radius=  2.0000
+$cosmo_out file=out.ccf
+$cosmo_data file=cosmo_transfer.tmp
+$cosmo_correlated
+$title
+$symmetry c1
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   off
+ redundant  off
+ cartesian  on
+ global     off
+ basis      off
+$atoms
+u  1-2                                                                         \
+   basis =u SVP(6g)                                                            \
+   ecp   =u def-ecp                                                            \
+   cbas  =u def-TZVP                                                           \
+   jkbas =u def-TZVP
+o  3,8,65-68                                                                   \
+   basis =o def2-TZVP                                                          \
+   cbas  =o def2-TZVP                                                          \
+   jkbas =o def2-TZVP
+h  4,7,9,15,17,20,22,24,28,31,33,36,41,44,46,48,50,52,54,56,58,60,62,64        \
+   basis =h def2-TZVP                                                          \
+   cbas  =h def2-TZVP                                                          \
+   jkbas =h def2-TZVP
+n  5,10-12,18,26                                                               \
+   basis =n def2-TZVP                                                          \
+   cbas  =n def2-TZVP                                                          \
+   jkbas =n def2-TZVP
+c  6,13-14,16,19,21,23,25,27,29-30,32,34-35,37-40,42-43,45,47,49,51,53,55,57,  \
+   59,61,63                                                                    \
+   basis =c def2-TZVP                                                          \
+   cbas  =c def2-TZVP                                                          \
+   jkbas =c def2-TZVP
+$basis    file=basis
+$ecp    file=basis
+$scfmo   file=mos
+$scfiterlimit      100
+$scfconv        7
+$thize     0.10000000E-04
+$thime        5
+$scfdamp   start=0.300  step=0.050  min=0.100
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor   4000 MiB  per_core
+$scforbitalshift  automatic=.1
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$rundimensions
+   natoms=68
+   nbf(CAO)=1960
+   nbf(AO)=1680
+$ricore     4000
+$rij
+$jkbas    file=auxbasis
+$rik
+$denconv     0.10000000E-06
+$freeze
+ implicit core=   60 virt=    0
+$cbas    file=auxbasis
+$last SCF energy change = -2877.3682
+$charge from ridft
+          2.000 (not to be modified here)
+$ricc2
+    mp2
+$last MP2 energy change= -8.3209097
+$closed shells
+ a       1-178                                  ( 2 )
+$energy    file=energy
+$grad    file=gradient
+$last step     ricc2
+$orbital_max_rnorm 0.10007760724684E-04
+$subenergy  Etot         E1                  Ej                Ex                 En
+-2877.368231737    -18269.12280918     8641.746585360    -307.5059184942     7057.513910577
+$dipole from ridft
+  x    -0.00414599738485    y     0.00022901687081    z     0.73799613080281    a.u.
+   | dipole | =    1.8758429285  debye
+$end

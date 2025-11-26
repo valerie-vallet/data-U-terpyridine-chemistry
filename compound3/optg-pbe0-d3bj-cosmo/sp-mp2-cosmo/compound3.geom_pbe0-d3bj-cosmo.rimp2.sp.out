@@ -1,0 +1,428 @@
+
+   OpenMP run-time library returned nthreads = 16
+
+ ricc2 (u-0-10.local) : TURBOMOLE rev. V7-9 compiled 8 Oct 2024 at 13:22:58
+ Copyright (C) 2024 TURBOMOLE GmbH, Karlsruhe
+
+
+    2025-11-19 20:50:37.791 
+
+
+
+                              R I C C 2 - PROGRAM
+
+                          the quantum chemistry groups
+                             at the universities in
+                               Karlsruhe & Bochum
+                                   Germany
+
+
+
+   *-----------------------------------------------------------------------*
+   |                     program will use 16 thread(s)                     |
+   *-----------------------------------------------------------------------*
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+         -3.55496443   -0.00160024    0.28047451    u     92.000     0
+          3.55723149   -0.00130733    0.34776199    u     92.000     0
+         -0.00482667    2.57656445    0.81156503    o      8.000     0
+         -0.02787944    3.36860158    2.45589321    h      1.000     0
+         -8.42114904    0.00079594    0.13423995    n      7.000     0
+          5.29966291   -8.71806214   -0.85519231    c      6.000     0
+          4.06658638  -10.31758681   -1.17522876    h      1.000     0
+         -0.00452431   -2.58021279    0.80971499    o      8.000     0
+         -0.02720291   -3.37310219    2.45362932    h      1.000     0
+          8.41806440   -0.00014893    0.12104021    n      7.000     0
+         -5.69825590    4.26589835   -0.24370717    n      7.000     0
+          5.69051497   -4.28925086   -0.11817077    n      7.000     0
+          9.67600405   -2.18863319    0.34905645    c      6.000     0
+         -5.31353789    8.67920065   -1.06087766    c      6.000     0
+         -4.08886686   10.26489251   -1.46960463    h      1.000     0
+         -9.38048363   -6.85151351   -0.34460531    c      6.000     0
+        -11.41089986   -7.03093544   -0.22068841    h      1.000     0
+          5.68843627    4.28778138   -0.11700292    n      7.000     0
+          9.37554894   -6.85404385   -0.38147387    c      6.000     0
+         11.41080854   -7.01913411   -0.36346289    h      1.000     0
+         -9.37388092    6.85400111   -0.34550293    c      6.000     0
+        -11.40405716    7.03551308   -0.22072810    h      1.000     0
+          4.27423516    6.33641457   -0.51484507    c      6.000     0
+          2.25192207    6.03893200   -0.56105832    h      1.000     0
+          9.67493069    2.18889470    0.34974620    c      6.000     0
+         -5.70227912   -4.26716563   -0.24172485    n      7.000     0
+          7.90078022   -8.97452632   -0.78749665    c      6.000     0
+          8.78335035  -10.80130756   -1.06022570    h      1.000     0
+         -9.66684705   -2.18732928    0.41866641    c      6.000     0
+        -13.46931239    0.00336029    1.45847498    c      6.000     0
+        -15.43758498    0.00438264    2.01908113    h      1.000     0
+         13.52103547    0.00093389    1.22428122    c      6.000     0
+         15.51125534    0.00135341    1.70113471    h      1.000     0
+          8.21487726   -4.52438949   -0.04426547    c      6.000     0
+         -4.29748885   -6.29882342   -0.74265723    c      6.000     0
+         -2.28227546   -5.98533486   -0.89441357    h      1.000     0
+         -8.21851371   -4.51741451   -0.04763107    c      6.000     0
+          8.21269274    4.52406140   -0.04291243    c      6.000     0
+         -9.66473056    2.19017215    0.41818830    c      6.000     0
+          4.27720203   -6.33843397   -0.51631717    c      6.000     0
+          2.25474154   -6.04189059   -0.56216381    h      1.000     0
+         -8.21417112    4.51876449   -0.04868554    c      6.000     0
+        -12.20026492    2.25495007    1.09469325    c      6.000     0
+        -13.16564852    4.03321637    1.36493731    h      1.000     0
+        -12.20241165   -2.24953907    1.09528662    c      6.000     0
+        -13.16941852   -4.02684160    1.36612406    h      1.000     0
+         -5.32164671   -8.68104241   -1.05765378    c      6.000     0
+         -4.09841943  -10.26810622   -1.46536408    h      1.000     0
+         12.23752782    2.25202100    0.91653176    c      6.000     0
+         13.21424788    4.02907598    1.15067639    h      1.000     0
+         12.23865976   -2.25068802    0.91576453    c      6.000     0
+         13.21628879   -4.02732915    1.14928933    h      1.000     0
+         -4.29166093    6.29599333   -0.74585842    c      6.000     0
+         -2.27683683    5.98051111   -0.89873349    h      1.000     0
+         -7.91375569   -8.95685360   -0.84898456    c      6.000     0
+         -8.79676423  -10.78763728   -1.09194475    h      1.000     0
+          9.37231940    6.85432614   -0.37950100    c      6.000     0
+         11.40751475    7.02029323   -0.36140876    h      1.000     0
+         -7.90523869    8.95776140   -0.85089885    c      6.000     0
+         -8.78647845   10.78941435   -1.09371354    h      1.000     0
+          5.29562457    8.71659833   -0.85304747    c      6.000     0
+          4.06182805   10.31561654   -1.17284960    h      1.000     0
+          7.89661526    8.97424548   -0.78507024    c      6.000     0
+          8.77837659   10.80149348   -1.05727584    h      1.000     0
+         -4.07188956   -0.00146418    3.55178508    o      8.000     0
+          4.04816533   -0.00204621    3.62293515    o      8.000     0
+         -3.09968027   -0.00180433   -3.00077601    o      8.000     0
+          3.13679766   -0.00053632   -2.93724909    o      8.000     0
+ 
+       center of nuclear mass  :    0.00062355   -0.00071518    0.14659702
+       center of nuclear charge:    0.00053440   -0.00061002    0.12409928
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    u        2    213    117   SVP(6g)   [10s9p5d4f3g|14s13p10d8f6g]
+    o        6     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+    h       24      8      6   def2-TZVP   [3s1p|5s1p]
+    n        6     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+    c       30     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+   ---------------------------------------------------------------------------
+   total:   68   2550   1680
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  117
+   total number of contracted shells         :  620
+   total number of cartesian basis functions : 1960
+   total number of SCF-basis functions       : 1680
+
+  number of unique ecp types :    1
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+
+   =========================================================================
+
+
+     restricted closed shell calculation for the wavefunction models:
+               MP2        - Second Order Moeller Plesset PT
+
+
+     global parameters for ricc2 program:
+
+        hard restart (reuse of interm.) :  disabled
+        soft restart (reuse of vectors) :  enabled 
+        threshold for vector function   :     1.000E-06
+        convergence threshold energy    :     1.000E-07
+        linear dependence threshold     :     1.000E-14
+        global print level              :      1
+        maximum number of iterations    :   100
+        maximum number DIIS vectors     :    10
+        max. dim. of reduced space      :   100
+        core memory limit (GB)          :    63
+                ... per thread (MB)     :  4000
+
+
+     MP2 energy only: Energy will be calculated directly from T2 amplitudes!
+ 
+
+     Scratch Directory : /state/partition2/vallet/1088521.phlam-s-sakura/
+
+
+   =========================================================================
+
+    der. integral neglect threshold  :  0.10E-07
+    integral neglect threshold       :  0.17E-11
+    integral storage threshold THIZE :  0.10E-04
+    integral storage threshold THIME :         5
+
+
+                  +---------------------------------------------+
+                  | RI-SCF/CPHF auxiliary basis set information |
+                  +---------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    u        2    473    438   def-TZVP   [15s13p14d13f9g7h5i|20s15p14d13f9g8h6i]
+    o        6     97     77   def2-TZVP   [10s8p4d2f1g|14s10p6d2f1g]
+    h       24     20     18   def2-TZVP   [2s2p2d|4s2p2d]
+    n        6     97     77   def2-TZVP   [10s8p4d2f1g|14s10p6d2f1g]
+    c       30     97     75   def2-TZVP   [10s8p5d1f1g|14s10p6d2f1g]
+   ---------------------------------------------------------------------------
+   total:   68   5500   4482
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  192
+   total number of contracted shells         : 1346
+   total number of cartesian basis functions : 5646
+   total number of SCF-basis functions       : 4482
+
+
+                  +------------------------------------------+
+                  |     Auxiliary basis set information      |
+                  +------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    u        2    320    320   def-TZVP   [11s10p9d7f6g6h5i|11s10p9d7f6g6h5i]
+    o        6     81     76   def2-TZVP   [8s6p4d3f1g|8s6p5d3f1g]
+    h       24     23     15   def2-TZVP   [4s2p1d|4s3p2d]
+    n        6     81     76   def2-TZVP   [8s6p4d3f1g|8s6p5d3f1g]
+    c       30     81     76   def2-TZVP   [8s6p4d3f1g|8s6p5d3f1g]
+   ---------------------------------------------------------------------------
+   total:   68   4594   4192
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  132
+   total number of contracted shells         : 1200
+   total number of cartesian basis functions : 5416
+   total number of SCF-basis functions       : 4192
+
+
+ maximum number of shells which are related by symmetry :  1
+
+
+ The symmetry information takes   1 MB
+ cosmo correl init
+ ==============================================================================
+                      COSMO switched on
+ ==============================================================================
+ COSMO stati: segments per atom: H   32 other atoms   92
+ COSMO statistics: nps   2211 npspher:    901
+ COSMO surface:
+   number of segments: 2211
+   area (bohr**2):     1885.380272
+   volume (bohr**3):   4680.624646
+ COSMO: check number of disjunct cavities:
+
+       ... OK contiguous cavity found
+ entered cosmo_ricc2_header
+            ======================================================
+                      COSMO settings in RICC2
+                   --------------------------
+             Solvent charges are equilibrated for ground state
+             COSMO linear response (LR) contribution included
+             Outlying Charge Correction (OCC) is performed
+             Using epsilon          =    80.100
+             Using refractive index =     1.300
+            ======================================================
+        IMPORTANT NOTICE: The calculation of the solvent contributions will
+         need the relaxed densities in general. Therefore the actual COSMO
+         energies will be output only at the end of the run. Any energies
+         or excitation energies quoted before that are only intermediate
+         quantities and should be ignored unless you know what you are doing!
+
+ ==============================================================================
+                                  COSMO SETTINGS
+ ==============================================================================
+  PARAMETER:
+    nppa:      1082
+    nspa:        92
+    nsph:        32
+    nps:       2211
+    npspher:    901
+    disex:   10.0000    
+    disex2:  4745.32    
+    rsolv [A]: 1.3000
+    routf:     0.8500
+    phsran:    0.0    
+    ampran:   0.10E-04
+    cavity:  closed
+    solvent: user input
+    source:  user input
+    epsilon:    80.100 ( 25.0 C)
+    refind:      1.300 ( 25.0 C)
+    fepsi:       0.9813896
+  CAVITY VOLUME/AREA [a.u.]:
+    surface: V1.0, A matrix: V1.0
+    area:  1885.38
+    volume:  4680.62
+  ELEMENT RADIUS [A]: ATOM LIST
+    u  2.22: 1,2
+    o  1.72: 3,8,65-68
+    h  1.30: 4,7,9,15,17,20,22,24,28,31,33,36,41,44,46,48,50,52,54,56,58,60,62,
+             64
+    n  1.83: 5,10-12,18,26
+    c  2.00: 6,13,14,16,19,21,23,25,27,29,30,32,34,35,37-40,42,43,45,47,49,51,
+             53,55,57,59,61,63
+ ==============================================================================
+
+*---------------------------------------------------------------------*
+|               simplified C1 algorithm will be applied               |
+*---------------------------------------------------------------------*
+  MOs are in ASCII format !
+
+
+ reading orbital data $scfmo  from file mos
+ orbital characterization : scfconv=7
+
+
+
+              +--------------------------------------------+
+              | list of orbitals that will be kept frozen: |
+              +--------------------------------------------+
+              |   irrep   index      energy     occ/vir    |
+              +--------------------------------------------+
+              |   a         1      -20.5985     occupied   |
+              |   a         2      -20.5980     occupied   |
+              |   a         3      -20.5970     occupied   |
+              |   a         4      -20.5966     occupied   |
+              |   a         5      -20.5675     occupied   |
+              |   a         6      -20.5675     occupied   |
+              |   a         7      -15.6235     occupied   |
+              |   a         8      -15.6228     occupied   |
+              |   a         9      -15.6210     occupied   |
+              |   a        10      -15.6209     occupied   |
+              |   a       ...        ...        occupied   |
+              |   a        60       -4.4337     occupied   |
+              +--------------------------------------------+
+
+
+
+   Molecular Orbital Statistic:
+   ============================
+
+   -----------------------------
+   orbitals in total:
+   -----------------------------
+    frozen occupied :     60
+    active occupied :    118
+    active virtual  :   1502
+    frozen virtual  :      0
+    all together    :   1680
+   -----------------------------
+
+
+     time in riccmos       cpu:  3.89 sec    wall:  2.20 sec    ratio:  1.8
+
+     total memory allocated for calculation of (Q|P)**(-1/2) : 202 MiB
+
+
+     calculation of (P|Q) ...
+     time in lp2sym        cpu: 15.95 sec    wall:  1.17 sec    ratio: 13.6
+
+
+     calculation of the Cholesky decomposition of (P|Q)**(-1) ...
+     time in invmetri      cpu:  5.67 sec    wall:  3.25 sec    ratio:  1.7
+
+   threshold for RMS(d[D]) in SCF was     :  0.10E-06
+   integral neglect threshold             :  0.17E-11
+   derivative integral neglect threshold  :  0.10E-07
+
+
+   =========================================================================
+
+     Energy of reference wave function is   -2877.3682317369999
+     Maximum orbital residual is           0.1000776072468E-04
+
+
+     Number of symmetry-nonredundant auxiliary basis functions:     4192
+
+     Block lengths for integral files:
+        frozen occupied (BOI):        2 MiB
+        active occupied (BJI):        4 MiB
+        active virtual  (BAI):       49 MiB
+        frozen virtual  (BGI):        0 MiB
+               general  (BTI):       54 MiB
+
+   =========================================================================
+
+
+
+
+   **************************************************************************
+   *                                                                        *
+   *          OPTIMIZATION OF THE GROUND STATE CLUSTER AMPLITUDES           *
+   *                                                                        *
+   **************************************************************************
+
+     Reaction field calculation using the COSMO solvation model
+        Reaction field scheme  : post-SCF                                                                        
+        Reaction field density : CCS-like                                                                        
+        epsilon                :    80.100
+        f(epsilon)             :   0.981390
+ 
+
+
+   Iter.   MP2 energy       Norm(Omega)   Norm(t1)  Norm(t2)     cpu    wall
+   ...........................................................................
+    1  -2885.6891414301     ------          0.00000   0.97421   87.04    5.78
+   ...........................................................................
+
+
+     time in total         cpu:  1 h 27 min  wall:  5 min 47 s  ratio: 15.1
+
+
+     **********************************************************************
+     *                                                                    *
+     *   RHF  energy                             :  -2877.3682317370      *
+     *   MP2 correlation energy (doubles)        :     -8.3209096931      *
+     *                                                                    *
+     *   Final MP2 energy                        :  -2885.6891414301      *
+     *                                                                    *
+     *    E(S)   =     -4.8787988267      E(T)   =     -3.4421108664      *
+     *    E(OS)  =     -6.0261691155      E(SS)  =     -2.2947405776      *
+     *                                                                    *
+     *   SCS-MP2 energy                          :  -2885.3645482015      *
+     *   (computed with  C(OS) =   1.2000  and  C(SS) =   0.3333)         *
+     *                                                                    *
+     *   SOS-MP2 energy                          :  -2885.2022515872      *
+     *   (computed with  C(OS) =   1.3000)                                *
+     *                                                                    *
+     *   Norm of MP1 T2 amplitudes               :      0.9742125621      *
+     *                                                                    *
+     **********************************************************************
+
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  1 hours 34 minutes and 45 seconds
+         total wall-time :  6 minutes and 34 seconds
+    ------------------------------------------------------------------------
+
+   ****  ricc2 : all done  ****
+
+
+    2025-11-19 20:57:11.858 
+
+ ricc2 ended normally
