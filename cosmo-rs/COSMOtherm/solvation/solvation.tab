@@ -1,0 +1,16 @@
+
+ Property  job 1 : Henry law coefficients H ;
+ Settings  job 1 : T= 298.15 K ; x(1)= 1.0000 ;
+ Units     job 1 : Energies in kcal/mol ; Pressure in mbar ; Henry constant in bar ; Concentrations x : mole fraction ;
+ General   job 1 : Free energy of solvation in reference (1 bar gas / 1 mol solvent) frame ; Solvent density = 996.683 g/l ;
+ 
+  Nr Compound                              H         ln(gamma)              pv             Gsolv             pvExp            HpvExp            GpvExp
+   1 h2o                          0.03660249        0.00000000     36.60249404       -1.95972562       31.76758052        0.03176758       -2.04366299
+   2 DMSO                         2.2290E-05       -3.57528324      0.79585792       -6.34632526                NA                NA                NA
+   3 H2                       17070.76284277        2.33189201      1.6578E+06        5.77383650                NA                NA                NA
+   4 H2O                          0.04240376       -0.00001526     42.40440220       -1.87255894                NA                NA                NA
+   5 HClO4                        0.00979886       -5.19913877   1774.73169165       -2.74053201                NA                NA                NA
+   6 U_IV_DMSO_8                          NA                NA              NA     -423.23716125                NA                NA                NA
+   7 terpy                        0.00191934       12.56222425      6.7212E-06       -3.70644992                NA                NA                NA
+   8 compound2                            NA                NA              NA     -107.85069773                NA                NA                NA
+   9 compound3                            NA                NA              NA     -111.18201266                NA                NA                NA

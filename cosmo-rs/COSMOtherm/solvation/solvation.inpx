@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : DefaultInpx.xml
+    Created on : 8. September 2017, 10:25
+    Author     : COSMOthermX
+    Description:
+        Default structure of inpx file for normal use 
+    Optional parameter:
+      <globalArea>
+	<comment/>
+      </globalArea>
+      <compoundList parametrization="" conformer="">
+      	<conformer>
+            <conformerName></conformerName>
+            <conformerAltName/>
+            <compound>
+               <compoundAltName/>
+	       <filename></filename>
+	       <filepath></filepath>
+	       <compOptions/>
+	       <confOptions/>
+	       <compProperties/>
+	    </compound>
+	    <compOptions/>
+	    <confOptions/>
+	    <compProperties/>
+	</conformer>
+	<compound>
+            <compoundAltName/>
+	    <filename></filename>
+       	    <filepath></filepath>
+	    <compOptions/>
+	    <confOptions/>
+	    <compProperties/>
+	</compound>
+      </compoundList>
+    Single calcJob:
+      <jobList>
+	<calcJob>
+	    <jobString></jobString>
+	    <comment></comment>
+	</calcJob>
+     </jobList>
+-->
+<defaultCalcJobFile>
+    <globalArea>
+	<comment/>
+	<line0>ctd = BP_TZVP_25.ctd cdir = "/home/pcmt/COSMOlogic/COSMOtherm2025/COSMOthermX/../COSMOtherm/CTDATA-FILES" ldir = "/home/pcmt/COSMOlogic/COSMOtherm2025/COSMOthermX/../licensefiles"          
+</line0>
+	<line1>notempty wtln ehfile          
+</line1>
+	<line2/>
+    </globalArea>
+    <compoundList conformer="yes" parametrization="TZVP">
+    <fraction/>
+      <compound>
+         <compoundAltName/>
+         <filename>h2o_c0.cosmo</filename>
+         <filepath>../COSMOtherm/DATABASE-COSMO/BP-TZVP-COSMO/h</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>DMSO.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>H2.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>H2O.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>HClO4.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>U_IV_DMSO_8.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>terpy.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>compound2.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+      <compound>
+         <compoundAltName/>
+         <filename>compound3.cosmo</filename>
+         <filepath>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs</filepath>
+         <compoundComment/>
+         <compOptions>
+            <contentIntern>0</contentIntern>
+            <useVap>1</useVap>
+         </compOptions>
+      </compound>
+   </compoundList>
+    <specialCompoundList conformer="yes" parametrization="TZVP">
+    </specialCompoundList>
+    <jobList>
+    <calcJob>
+         <jobString>henry= 1 tc=25.0 GSOLV=reference</jobString>
+         <comment> # Automatic Henry Law coefficient Calculation</comment>
+      </calcJob>
+   </jobList>
+</defaultCalcJobFile>

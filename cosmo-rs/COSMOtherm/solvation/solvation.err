@@ -1,0 +1,8 @@
+
+solvation.out:39:WARNING: too many neighbor atoms detected: U_IV_DMSO_8 !
+solvation.out:40:WARNING: too many neighbor atoms detected: U_IV_DMSO_8_gas !
+solvation.out:41:WARNING: too many neighbor atoms detected: compound2 !
+solvation.out:42:WARNING: too many neighbor atoms detected: compound2_gas !
+solvation.out:43:WARNING: too many neighbor atoms detected: compound3 !
+solvation.out:44:WARNING: too many neighbor atoms detected: compound3_gas !
+solvation.out:228:WARNING: Energy difference E_COSMO-E_GAS of compound 6 conformer 1 is exceptionally large: E_COSMO-E_GAS =  448.0735 kcal/mol

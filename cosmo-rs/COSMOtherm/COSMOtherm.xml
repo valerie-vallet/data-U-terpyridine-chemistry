@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+   <projectTitle>COSMOtherm</projectTitle>
+   <directory>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs/COSMOtherm</directory>
+   <projectID>2</projectID>
+   <jobs>
+      <job formOfJob="job">
+         <directory>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs/COSMOtherm/solvation</directory>
+         <jobFile_inpx>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs/COSMOtherm/solvation/solvation.inpx</jobFile_inpx>
+         <jobFile_inp>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs/COSMOtherm/solvation/solvation.inp</jobFile_inp>
+         <useInpFileType>both</useInpFileType>
+         <start>1763806925794</start>
+         <stop>1763806928910</stop>
+         <runError>false</runError>
+         <startRun>false</startRun>
+         <projectTitle>COSMOtherm</projectTitle>
+         <killed>false</killed>
+         <copied>false</copied>
+         <noOfCPUs>1</noOfCPUs>
+         <jobID>1</jobID>
+      </job>
+   </jobs>
+</project>

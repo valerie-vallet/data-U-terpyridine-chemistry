@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+  <name>solvation</name>
+  <input_file>/home/vallet/ANL/ANL-UVI-structures-Emily/cosmo-rs/COSMOtherm/solvation/solvation.inp</input_file>
+  <compounds>
+    <status>finished</status>
+    <number>9</number>
+    <number_read>9</number_read>
+  </compounds>
+  <properties>
+    <status>finished</status>
+    <number>1</number>
+    <number_finished>1</number_finished>
+    <property>
+      <type>HENRY</type>
+      <status>finished</status>
+      <number_mix_calc>10</number_mix_calc>
+    </property>
+  </properties>
+</job>
