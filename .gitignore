@@ -1,0 +1,33 @@
+# Systems with outer-sphere ClCO4
+*ClO4_2*
+*ClO4_4*
+
+# AMS files
+*.ams
+*.pid
+*.results
+*.rkf*
+
+# QTAIM subresults
+*_atomicfiles/
+*.extout
+*.txt
+*.sum*
+*.mgp*
+*.g3dviz
+*.wfx
+
+# Gaussian checkpoint files
+*.chk*
+
+# Shell scripts
+*.pbs
+*.sh
+*.slurm
+
+# TIFF/PNG plots
+*.tiff
+*.png
+
+# DATA files
+ *.dat

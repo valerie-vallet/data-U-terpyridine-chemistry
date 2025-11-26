@@ -1,0 +1,33 @@
+{
+  "title": "Reactions of U(DMSO)<sub>8</sub>(ClO<sub>4</sub>)<sub>4</sub> with Terpyridine Yield Dimeric Hydrolysis Products and Induce C-C Coupling: Dataset",
+  "description": "This dataset collects the inputs and outputs of the calculations (Gaussian, ADF, NBO, QTAIM) discussed in the paper entitled \"Reactions of U(DMSO)<sub>8</sub>(ClO<sub>4</sub>)<sub>4</sub> with Terpyridine Yield Dimeric Hydrolysis Products and Induce C-C Coupling\" by Emily R. Mikeska, Richard E. Wilson, and Valérie Vallet.",
+  "creators": [
+    {
+      "name": "Mikeska, Emily R.",
+      "affiliation": "Argonne National Laboratory, USA",
+      "orcid": "https://orcid.org/0000-0001-5149-0132"
+    },
+    {
+      "name": "Wilson, Richard E.",
+      "affiliation": "Argonne National Laboratory, USA",
+      "orcid": "https://orcid.org/0000-0001-8618-5680"
+    },
+    {
+      "name": "Vallet, Valérie",
+      "affiliation": "CNRS and Lille University, France",
+      "orcid": "https://orcid.org/0000-0002-2202-3858"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "uranium",
+    "terpyridine",
+    "quantum chemistry",
+    "Raman",
+    "Infrared",
+    "Hydrolysis"
+    "C-C coupling"
+  ],
+  "access_right": "open",
+  "version": "1.0.0"
+}
