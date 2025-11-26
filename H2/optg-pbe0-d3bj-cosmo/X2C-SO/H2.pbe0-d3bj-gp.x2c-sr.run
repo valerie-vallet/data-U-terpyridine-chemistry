@@ -1,0 +1,31 @@
+#!/bin/sh
+
+"$AMSBIN/ams" << eor
+
+Task SinglePoint
+System
+    Atoms
+        H 0.0 0.0 0.626695 
+        H 0.0 0.0 1.373305 
+    End
+    BondOrders
+         1 2 1.0
+    End
+End
+
+Engine ADF
+    Basis
+        Type TZ2P
+        Core None
+    End
+    XC
+        Hybrid PBE0
+        DISPERSION Grimme3 BJDAMP
+    End
+    Relativity
+        Formalism X2C
+    End
+    NumericalQuality Good
+EndEngine
+eor
+

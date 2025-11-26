@@ -1,0 +1,286 @@
+
+   OpenMP run-time library returned nthreads = 16
+
+ ricc2 (u-0-8.local) : TURBOMOLE rev. V7-9 compiled 8 Oct 2024 at 13:22:58
+ Copyright (C) 2024 TURBOMOLE GmbH, Karlsruhe
+
+
+    2025-11-25 11:49:35.338 
+
+
+
+                              R I C C 2 - PROGRAM
+
+                          the quantum chemistry groups
+                             at the universities in
+                               Karlsruhe & Bochum
+                                   Germany
+
+
+
+   *-----------------------------------------------------------------------*
+   |                     program will use 16 thread(s)                     |
+   *-----------------------------------------------------------------------*
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          2.72082012   -0.34668160   -0.99753540    o      8.000     0
+          0.30855826    0.57936924   -0.37649580    cl    17.000     0
+         -1.63009665   -0.23595309   -2.01554598    o      8.000     0
+         -0.32308459    0.33799641    2.20321279    o      8.000     0
+          0.66695994    3.53222883   -0.89043895    o      8.000     0
+         -0.93512152    4.37064173   -0.51055109    h      1.000     0
+ 
+       center of nuclear mass  :    0.32799055    0.77191353   -0.40878968
+       center of nuclear charge:    0.31574319    0.81041287   -0.41026880
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    o        4     46     31   def2-TZVP   [5s3p2d1f|11s6p2d1f]
+    cl       1     63     37   def2-TZVP   [5s5p2d1f|14s9p3d1f]
+    h        1      8      6   def2-TZVP   [3s1p|5s1p]
+   ---------------------------------------------------------------------------
+   total:    6    255    167
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   53
+   total number of contracted shells         :   61
+   total number of cartesian basis functions :  192
+   total number of SCF-basis functions       :  167
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+
+   =========================================================================
+
+
+     restricted closed shell calculation for the wavefunction models:
+               MP2        - Second Order Moeller Plesset PT
+
+
+     global parameters for ricc2 program:
+
+        hard restart (reuse of interm.) :  disabled
+        soft restart (reuse of vectors) :  enabled 
+        threshold for vector function   :     1.000E-06
+        convergence threshold energy    :     1.000E-07
+        linear dependence threshold     :     1.000E-14
+        global print level              :      1
+        maximum number of iterations    :   100
+        maximum number DIIS vectors     :    10
+        max. dim. of reduced space      :   100
+        core memory limit (GB)          :    63
+                ... per thread (MB)     :  4000
+
+
+     MP2 energy only: Energy will be calculated directly from T2 amplitudes!
+ 
+
+     Scratch Directory : /state/partition2/vallet/1092456.phlam-s-sakura/
+
+
+   =========================================================================
+
+    der. integral neglect threshold  :  0.10E-07
+    integral neglect threshold       :  0.17E-10
+    integral storage threshold THIZE :  0.10E-04
+    integral storage threshold THIME :         5
+
+
+                  +---------------------------------------------+
+                  | RI-SCF/CPHF auxiliary basis set information |
+                  +---------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    o        4     97     77   def2-TZVP   [10s8p4d2f1g|14s10p6d2f1g]
+    cl       1    139    128   def2-TZVP   [13s11p9d4f1g|16s12p10d4f1g]
+    h        1     20     18   def2-TZVP   [2s2p2d|4s2p2d]
+   ---------------------------------------------------------------------------
+   total:    6    547    454
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   84
+   total number of contracted shells         :  144
+   total number of cartesian basis functions :  547
+   total number of SCF-basis functions       :  454
+
+
+                  +------------------------------------------+
+                  |     Auxiliary basis set information      |
+                  +------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    o        4     81     76   def2-TZVP   [8s6p4d3f1g|8s6p5d3f1g]
+    cl       1    119    113   def2-TZVP   [9s7p6d5f2g|10s7p7d5f2g]
+    h        1     23     15   def2-TZVP   [4s2p1d|4s3p2d]
+   ---------------------------------------------------------------------------
+   total:    6    466    432
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   63
+   total number of contracted shells         :  124
+   total number of cartesian basis functions :  542
+   total number of SCF-basis functions       :  432
+
+
+ maximum number of shells which are related by symmetry :  1
+
+
+ The symmetry information takes   1 MB
+
+*---------------------------------------------------------------------*
+|               simplified C1 algorithm will be applied               |
+*---------------------------------------------------------------------*
+  MOs are in ASCII format !
+
+
+ reading orbital data $scfmo  from file mos
+ orbital characterization : scfconv=7
+
+
+
+              +--------------------------------------------+
+              | list of orbitals that will be kept frozen: |
+              +--------------------------------------------+
+              |   irrep   index      energy     occ/vir    |
+              +--------------------------------------------+
+              |   a         1     -105.2860     occupied   |
+              |   a         2      -20.6997     occupied   |
+              |   a         3      -20.6381     occupied   |
+              |   a         4      -20.6381     occupied   |
+              |   a         5      -20.6344     occupied   |
+              |   a         6      -10.9524     occupied   |
+              |   a         7       -8.4253     occupied   |
+              |   a         8       -8.4240     occupied   |
+              |   a         9       -8.4239     occupied   |
+              +--------------------------------------------+
+
+
+
+   Molecular Orbital Statistic:
+   ============================
+
+   -----------------------------
+   orbitals in total:
+   -----------------------------
+    frozen occupied :      9
+    active occupied :     16
+    active virtual  :    142
+    frozen virtual  :      0
+    all together    :    167
+   -----------------------------
+
+
+     time in riccmos       cpu:  0.27 sec    wall:  0.03 sec    ratio:  7.9
+
+     total memory allocated for calculation of (Q|P)**(-1/2) : 3 MiB
+
+
+     calculation of (P|Q) ...
+     time in lp2sym        cpu:  0.46 sec    wall:  0.03 sec    ratio: 15.0
+
+
+     calculation of the Cholesky decomposition of (P|Q)**(-1) ...
+     time in invmetri      cpu:  0.26 sec    wall:  0.02 sec    ratio: 15.0
+
+   threshold for RMS(d[D]) in SCF was     :  0.10E-06
+   integral neglect threshold             :  0.17E-10
+   derivative integral neglect threshold  :  0.10E-07
+
+
+   =========================================================================
+
+     Energy of reference wave function is    -759.3243076512000
+     Maximum orbital residual is           0.2230393604319E-05
+
+
+     Number of symmetry-nonredundant auxiliary basis functions:      432
+
+     Block lengths for integral files:
+        frozen occupied (BOI):        1 MiB
+        active occupied (BJI):        1 MiB
+        active virtual  (BAI):        1 MiB
+        frozen virtual  (BGI):        0 MiB
+               general  (BTI):        1 MiB
+
+   =========================================================================
+
+
+
+
+   **************************************************************************
+   *                                                                        *
+   *          OPTIMIZATION OF THE GROUND STATE CLUSTER AMPLITUDES           *
+   *                                                                        *
+   **************************************************************************
+
+
+   Iter.   MP2 energy       Norm(Omega)   Norm(t1)  Norm(t2)     cpu    wall
+   ...........................................................................
+    1   -760.5014730488     ------          0.00000   0.32206    0.03    0.00
+   ...........................................................................
+
+
+     time in total         cpu:  2.85 sec    wall:  0.18 sec    ratio: 15.7
+
+
+     **********************************************************************
+     *                                                                    *
+     *   RHF  energy                             :   -759.3243076512      *
+     *   MP2 correlation energy (doubles)        :     -1.1771653976      *
+     *                                                                    *
+     *   Final MP2 energy                        :   -760.5014730488      *
+     *                                                                    *
+     *    E(S)   =     -0.6933157595      E(T)   =     -0.4838496381      *
+     *    E(OS)  =     -0.8545989722      E(SS)  =     -0.3225664254      *
+     *                                                                    *
+     *   SCS-MP2 energy                          :   -760.4573485596      *
+     *   (computed with  C(OS) =   1.2000  and  C(SS) =   0.3333)         *
+     *                                                                    *
+     *   SOS-MP2 energy                          :   -760.4352863150      *
+     *   (computed with  C(OS) =   1.3000)                                *
+     *                                                                    *
+     *   Norm of MP1 T2 amplitudes               :      0.3220630539      *
+     *                                                                    *
+     **********************************************************************
+
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   9.97 seconds
+         total wall-time :   0.79 seconds
+    ------------------------------------------------------------------------
+
+   ****  ricc2 : all done  ****
+
+
+    2025-11-25 11:49:36.011 
+
+ ricc2 ended normally

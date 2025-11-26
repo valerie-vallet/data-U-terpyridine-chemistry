@@ -1,0 +1,78 @@
+$title
+$symmetry c1
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   off
+ redundant  off
+ cartesian  on
+ global     off
+ basis      off
+$atoms
+h  1-2                                                                         \
+   basis =h def2-TZVP                                                          \
+   cbas  =h def2-TZVP                                                          \
+   jkbas =h def2-TZVP
+$basis    file=basis
+$scfmo   file=mos
+$scfiterlimit      100
+$scfconv        7
+$thize     0.10000000E-04
+$thime        5
+$scfdamp   start=0.300  step=0.050  min=0.100
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    500 MiB  per_core
+$scforbitalshift  automatic=.1
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$rundimensions
+   natoms=2
+   nbf(CAO)=12
+   nbf(AO)=12
+$last SCF energy change = 0.39839646E-03
+$charge from ridft
+         -0.000 (not to be modified here)
+$denconv     0.10000000E-06
+$freeze
+ implicit core=    0 virt=    0
+$cbas    file=auxbasis
+$ricc2
+    mp2
+$closed shells
+ a       1                                      ( 2 )
+$energy    file=energy
+$grad    file=gradient
+$ricore      500
+$rij
+$jkbas    file=auxbasis
+$rik
+$last step     ricc2
+$dipole from ridft
+  x    -0.00000000613323    y     0.00000000367290    z    -0.00000001289349    a.u.
+   | dipole | =    0.0000000375  debye
+$last MP2 energy change= -.38207555E-04
+$orbital_max_rnorm 0.20343450584468E-05
+$subenergy  Etot         E1                  Ej                Ex                 En
+-1.132476196999    -2.497081407656     1.311663881881    -.6558319409407    0.7087732697165
+$end

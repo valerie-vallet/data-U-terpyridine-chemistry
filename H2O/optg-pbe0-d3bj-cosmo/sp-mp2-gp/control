@@ -1,0 +1,82 @@
+$title
+$symmetry c1
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   off
+ redundant  off
+ cartesian  on
+ global     off
+ basis      off
+$atoms
+o  1                                                                           \
+   basis =o def2-TZVP                                                          \
+   cbas  =o def2-TZVP                                                          \
+   jkbas =o def2-TZVP
+h  2-3                                                                         \
+   basis =h def2-TZVP                                                          \
+   cbas  =h def2-TZVP                                                          \
+   jkbas =h def2-TZVP
+$basis    file=basis
+$scfmo   file=mos
+$closed shells
+ a       1-5                                    ( 2 )
+$scfiterlimit      100
+$scfconv        7
+$thize     0.10000000E-04
+$thime        5
+$scfdamp   start=0.300  step=0.050  min=0.100
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    500 MiB  per_core
+$scforbitalshift  automatic=.1
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$energy    file=energy
+$grad    file=gradient
+$forceapprox    file=forceapprox
+$ricore      500
+$rij
+$jkbas    file=auxbasis
+$rik
+$denconv     0.10000000E-06
+$freeze
+ implicit core=    1 virt=    0
+$cbas    file=auxbasis
+$ricc2
+    mp2
+$rundimensions
+   natoms=3
+   nbf(CAO)=48
+   nbf(AO)=43
+$last step     ricc2
+$last SCF energy change = 0.13070653E-01
+$charge from ridft
+          0.000 (not to be modified here)
+$dipole from ridft
+  x    -0.00000000441414    y     0.85333467108617    z     0.00000000161661    a.u.
+   | dipole | =    2.1689767805  debye
+$last MP2 energy change= -.36889453E-03
+$orbital_max_rnorm 0.84014899722900E-05
+$subenergy  Etot         E1                  Ej                Ex                 En
+-76.05863737549    -122.9918534317     46.73343026514    -8.945674804449     9.145460595566
+$end
